@@ -1,0 +1,54 @@
+.inp{
+    width: 35%;
+    padding: 20px;
+    margin: 30px 0px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px 0 0 10px;
+}
+.btn{
+    padding: 20px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.box{
+    width: 50%;
+    margin:10px auto;
+    background-color: rgb(188, 58, 253);
+    
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+  }
+  .box>td{
+    padding: 10px;
+  }
+
+  .cont{
+    margin: 50px auto;
+    padding: 40px;
+    /* border: 2px solid; */
+    box-shadow: 0 1px 5px rgba(0, 1, 2, .4);
+  }
+
+  .btn1{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+  }
+
+  .btn2{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(43, 0, 255);
+    color: white;
+  }
