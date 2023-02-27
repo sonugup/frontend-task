@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="TaskNurml.css">
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="mytask">
+    Hello Ma'am
+  </div>
+  <script type="text/babel">
+
+
+    const Todolist = (props) => {
+      return (
+        <div>
+          <div className="todo_style">
+
+            {/* <i className='fa fa-times' aria-hidden='true' onClick={deleteItems} /> */}
+            <p> {props.text} </p>
+          </div>
+        </div>
+      )
+    }
+
+    const { useState } = React;
+    const data = [
+      {
+        title: "Onboarding Call"
+      },
+      {
+        title: "Google Search Console Access"
+      },
+      {
+        title: "Google Analytics Access"
+      },
+      {
+        title: "Website Access"
+      },
+      {
+        title: "Technical Audit"
+      },
+      {
+        title: "Anchor Text and Semantic Analysis"
+      },
+      {
+        title: "Competition Analysis"
+      },
+      {
+        title: "Anchor Text / URL Mapping"
+      },
+      {
+        title: "Google Data Studio Report + Local Reporting Sulte"
+      },
+      {
+        title: "Site Level Optimixation"
+      },
+      {
+        title: "On Page Optimization"
+      },
+      {
+        title: "Content Creation"
+      },
+      {
+        title: "Premlum Press Release"
+      },
+      {
+        title: "Authority Niche Placements"
+      },
+      {
+        title: "Review Management"
+      },
+      {
+        title: "Index Links"
+      },
+      {
+        title: "Video Recap"
+      }
+    ]
+
+    function Task() {
+
+      const defaultColumns = {
+        cell: (props) => <input value="data" />
+      }
+      const [input, setInput] = useState("")
+
+      const [items, setItems] = useState([])
+      const itemEvent = (event) => {
+        setInput(event.target.value);
+      }
+
+      const listOfItem = () => {
+        setItems((oldItems) => {
+          return [...oldItems, input]
+        })
+        console.log(items)
+        setInput("")
+      }
+      console.log(input)
+
+      return (
+        <div className="App">
+          <table border="1px solid">
+            <thead border="1px solid">
+              <td>MONTH 1</td>
+              {
+                data.map((e) => {
+                  return (
+                    <tr >
+                      <td  > <input type="text" name="" value={e.title} id="" /> </td>
+                      <td><input type="text" name="" value={input} onChange={(e) => (setInput(e.target.value))} /> </td>
+                      <td > <input type="text" name="" id="" /> </td>
+                      <td > <input type="text" name="" id="" /> </td>
+                    </tr>
+                  )
+                })
+              }
+            </thead>
+          </table>
+          <button onClick={listOfItem}>add</button>
+        </div>
+      );
+    }
+    function Test() {
+      const tast = () => alert("test")
+      return <button onClick={tast}>click me </button>
+    }
+    class Hello extends React.Component {
+      render() {
+        return <div> Hello ma'am it is right n , <Test />,<Task /> </div>
+      }
+    }
+
+    ReactDOM.render(<Hello />, document.getElementById('mytask'))
+  </script>
+</body>
+
+</html>
