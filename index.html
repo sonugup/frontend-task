@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editable Table</title>
+    <style>
+        .inp{
+            border: 1px solid;
+
+        }
+        .inp>input{
+            border: none;
+            width: 100px;
+
+        } 
+        .tr{
+            border: 2px solid red;
+        }
+    </style>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function EditableCell({ value, onChange }) {
+        return (
+          <td  >
+            <input type="text" value={value} onChange={onChange} />
+          </td>
+        );
+      }
+
+      function EditableRow({ data, onChange }) {
+        const handleChange = (event, index) => {
+          const newData = [...data];
+          newData[index] = event.target.value;
+          onChange(newData);
+        };
+
+        return (
+          <tr classname="tr">
+            
+            {data.map((value, index) => (
+              <EditableCell
+                key={index}
+                value={value}
+                onChange={(event) => handleChange(event, index)}
+              />
+            ))}
+          </tr>
+        );
+      }
+
+      function EditableTable({ data, onChange }) {
+        const handleRowChange = (newData, index) => {
+          const newDataList = [...data];
+          newDataList[index] = newData;
+          onChange(newDataList);
+        };
+
+        return (
+          <table border="1px solid">
+            <tbody>
+                <td>MONTH 1</td>
+              {data.map((row, index) => (
+                <EditableRow
+                  key={index}
+                  data={row}
+                  onChange={(newRowData) => handleRowChange(newRowData, index)}
+                />
+              ))}
+            </tbody>
+          </table>
+        );
+      }
+
+      const initialData = [
+        ["Onboarding Call", "", "", "", ""],
+        ["Google Search Console Access", "", "", "", ""],
+        ["Google Analytics Access",  "", "", "", ""],
+        ["Website Access",  "", "", "", ""],
+        ["Technical Audit",  "", "", "", ""],
+        ["Anchor Text and Semantic Analysis", "", "", "", ""],
+        ["Competition Analysis", "", "", "", ""],
+        ["Anchor Text / URL Mapping",  "", "", "", ""],
+        ["Google Data Studio Report + Local Reporting Sulte",  "", "", "", ""],
+        ["Site Level Optimixation", "", "", "", ""],
+        ["On Page Optimization", "", "", "", ""],
+        ["Content Creation", "", "", "", ""],
+        ["Premlum Press Release", "", "", "", ""],
+        ["Authority Niche Placements", "", "", "", ""],
+        ["Review Management", "", "", "", ""],
+        ["Index Links", "", "", "", ""],
+        ["Video Recap", "", "", "", ""],
+      ];
+
+      function App() {
+        const [data, setData] = React.useState(initialData);
+
+        const handleDataChange = (newData) => {
+          setData(newData);
+        };
+
+        return (
+          <EditableTable data={data} onChange={handleDataChange} />
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
