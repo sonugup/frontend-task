@@ -6,6 +6,9 @@ Hi I am going complete a task
 All the best myself
 
 
+it's okey
+
+
 Install `redux`, `axios`, `json-server` and `react-redux` library,
 
 
