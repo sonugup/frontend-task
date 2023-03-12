@@ -16,7 +16,7 @@ create a script for running the json-sever in the package.json file,"server":"js
 
 Run this cammand `npm run server` to run the json-server
 
-
+All thinks is going good
 
 Need to create som componets , like Task.jsx, and TaskInput.js
 
