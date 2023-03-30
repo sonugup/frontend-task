@@ -15,6 +15,7 @@ function App() {
         clearInterval(timdata);
       };
      }, [])
+  
   setInterval(updatedDate, 1000)
   
   return (
