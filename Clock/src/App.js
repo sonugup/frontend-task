@@ -3,7 +3,6 @@ import './App.css';
 import {useState , useEffect} from "react"
 function App() {
 
-  
   const [curTime, setCurTime] = useState(new Date)
 
   const updatedDate = ()  => {
