@@ -16,6 +16,7 @@ function App() {
       };
      }, [])
   setInterval(updatedDate, 1000)
+  
   return (
     <div className="App">
       <div className="App-header">
