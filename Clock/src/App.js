@@ -5,7 +5,7 @@ function App() {
 
   
 
-  // const time= new Date().
+  // const time= 
 
   const [curTime, setCurTime] = useState(new Date)
 
