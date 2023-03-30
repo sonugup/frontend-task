@@ -26,7 +26,7 @@ function App() {
         <div className="box">
         <h2>{curTime.toLocaleTimeString()}</h2>
         </div>
-       
+      
       </div>
     </div>
   );
