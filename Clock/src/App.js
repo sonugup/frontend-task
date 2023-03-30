@@ -5,7 +5,7 @@ function App() {
 
   
 
-  // const time= new Date().toLocaleTimeString();
+  // const time= new Date().
 
   const [curTime, setCurTime] = useState(new Date)
 
