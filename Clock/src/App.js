@@ -6,7 +6,6 @@ function App() {
   
 
 
-
   const [curTime, setCurTime] = useState(new Date)
 
   const updatedDate = ()  => {
